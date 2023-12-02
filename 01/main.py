@@ -4,6 +4,8 @@
 import re
 
 from constants import *
+from run_config import *
+
 
 def get_first_last_including_string(line: str) -> (chr, chr):
     possible_string_reps = LIST_OF_SPELLED_DIGITS_MAP.keys()
@@ -63,7 +65,9 @@ def get_sum_of_values_from_input(file, include_spelled_digts: bool) -> int:
 def run():
     file = open(TEST_INPUT_FILE if USE_TEST_INPUT else INPUT_FILE, "r")
     value = get_sum_of_values_from_input(file, not IS_PART_1)
-    print(value)
+
+    print("\nPart " + ("1" if IS_PART_1 else "2"))
+    print("Sum: " + str(value))
 
 
 if __name__ == '__main__':
